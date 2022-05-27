@@ -77,7 +77,7 @@
 1652715446 d:\yatogami\git\flappy-bird-2.0\newg\baseobject.h
 	"CommonFunc.h"
 
-1653641814 d:\yatogami\git\flappy-bird-2.0\newg\commonfunc.h
+1653669081 d:\yatogami\git\flappy-bird-2.0\newg\commonfunc.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -101,7 +101,7 @@
 
 1652598934 d:\yatogami\git\flappy-bird-2.0\newg\imptimer.h
 
-1653641688 source:d:\yatogami\git\flappy-bird-2.0\newg\mainobject.cpp
+1653641894 source:d:\yatogami\git\flappy-bird-2.0\newg\mainobject.cpp
 	"MainObject.h"
 	"BaseObject.h"
 
