@@ -62,6 +62,8 @@ void MainObject::Show(SDL_Renderer* des) {
     rect.x = x_pos - map_x_;
     rect.y = y_pos - map_y_;
 
+//    cout << rect.x << ' ' << rect.y << '\n';
+
     SDL_Rect* current_clip = &frame_clip[frame];
 
     SDL_Rect renderQuad = {rect.x, rect.y , width_frame, height_frame};
@@ -125,7 +127,6 @@ void MainObject::CenterEntityOnMap(Map& map_data) {
     else
         if(map_data.start_y + screen_h >= map_data.max_y)
             map_data.start_y = map_data.max_y - screen_h;
-//    cout << map_data.start_x << ' ' << x_pos << ' ' << y_pos << '\n';
 }
 
 void MainObject::CheckToMap(Map& map_data) {
@@ -137,60 +138,36 @@ void MainObject::CheckToMap(Map& map_data) {
     // check horizontal
     int height_min = height_frame < Tile_Size ? height_frame : Tile_Size;
 
-    x1 = (x_pos + x_val) / Tile_Size;
-    x2 = (x_pos + x_val + width_frame - 1) / Tile_Size;
+    x1 = (x_pos + x_val + 13) / Tile_Size;
+    x2 = (x_pos + x_val + width_frame - 1 + 13) / Tile_Size;
 
     y1 = (y_pos) / Tile_Size;
     y2 = (y_pos + height_min - 1) / Tile_Size;
 
     if(x1 >= 0 && x2 < MAX_MAP_X && y1 >= 0 && y2 <= MAX_MAP_Y) {
-        if(x_val > 0) // moving to right
-        {
-            if(map_data.tile[y1][x2] != BLANK_TILE || map_data.tile[y2][x2] != BLANK_TILE) {
-                if(CheckMat(map_data.tile[y1][x2]) || CheckMat(map_data.tile[y2][x2])) {
-                    Set_GameOver(gameover_);
+        if(map_data.tile[y1][x2] != BLANK_TILE || map_data.tile[y2][x2] != BLANK_TILE) {
+            if(CheckMat(map_data.tile[y1][x2]) || CheckMat(map_data.tile[y2][x2])) {
+                Set_GameOver(gameover_);
+            }
+            else {
+                if(map_data.tile[y1][x2] == COIN_VAL) {
+                    num_coins_++;
+                    map_data.tile[y1][x2] = 0;
+                    touch_coin_ = true;
                 }
-                else {
-                    if(map_data.tile[y1][x2] == COIN_VAL) {
-                        num_coins_++;
-                        map_data.tile[y1][x2] = 0;
-                        touch_coin_ = true;
-                    }
-                    if(map_data.tile[y2][x2] == COIN_VAL) {
-                        num_coins_++;
-                        map_data.tile[y2][x2] = 0;
-                        touch_coin_ = true;
-                    }
+                if(map_data.tile[y2][x2] == COIN_VAL) {
+                    num_coins_++;
+                    map_data.tile[y2][x2] = 0;
+                    touch_coin_ = true;
                 }
             }
         }
-//        else
-//        if(x_val < 0) {
-//            if(map_data.tile[y1][x1] != BLANK_TILE || map_data.tile[y2][x1] != BLANK_TILE) {
-//                if(CheckMat(map_data.tile[y1][x1]) || CheckMat(map_data.tile[y2][x1])) {
-//                    Set_GameOver(gameover_);
-//                }
-//                else {
-//                    if(map_data.tile[y1][x1] == COIN_VAL) {
-//                        num_coins_++;
-//                        map_data.tile[y1][x1] = 0;
-//                        touch_coin_ = true;
-//                    }
-//                    if(map_data.tile[y2][x1] == COIN_VAL) {
-//                        num_coins_++;
-//                        map_data.tile[y2][x1] = 0;
-//                        touch_coin_ = true;
-//                    }
-//                }
-//            }
-//        }
     }
-
     // check vertical
 
     int width_min = width_frame < Tile_Size ? width_frame : Tile_Size;
-    x1 = x_pos / Tile_Size;
-    x2 = (x_pos + width_min) / Tile_Size;
+    x1 = (x_pos + 13) / Tile_Size;
+    x2 = (x_pos + width_min + 13) / Tile_Size;
 
     y1 = (y_pos + y_val) / Tile_Size;
     y2 = (y_pos + y_val + height_frame - 3) / Tile_Size;
@@ -199,6 +176,9 @@ void MainObject::CheckToMap(Map& map_data) {
         if(y_val > 0) {
             if(map_data.tile[y2][x1] != BLANK_TILE || map_data.tile[y2][x2] != BLANK_TILE) {
                 if(CheckMat(map_data.tile[y2][x1]) || CheckMat(map_data.tile[y2][x2])) {
+//                    cout << x_pos << ' ' << y_pos << '\n';
+//                    cout << map_data.tile[y2][x1] << '\n';
+//                    cout << y2 << ' ' << x1;
                     Set_GameOver(gameover_);
                 }
                 else {

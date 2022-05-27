@@ -27,8 +27,6 @@ void GameMap::LoadMap(char* name) {
         }
     f.close();
 
-    cout << MAX_MAP_Y - 1 << ' ' << MAX_MAP_X - BLANK_SPACE - HAND_SPACE - 1<< '\n';
-
     f.open("File/FinalMap.dat", ios::in);
     st = "";
     while(f >> ss)

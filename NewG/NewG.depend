@@ -77,7 +77,7 @@
 1652715446 d:\yatogami\git\flappy-bird-2.0\newg\baseobject.h
 	"CommonFunc.h"
 
-1653578650 d:\yatogami\git\flappy-bird-2.0\newg\commonfunc.h
+1653641814 d:\yatogami\git\flappy-bird-2.0\newg\commonfunc.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_ttf.h>
@@ -87,7 +87,7 @@
 1653322428 source:d:\yatogami\git\flappy-bird-2.0\newg\commonfunc.cpp
 	"CommonFunc.h"
 
-1653578347 source:d:\yatogami\git\flappy-bird-2.0\newg\game_map.cpp
+1653637435 source:d:\yatogami\git\flappy-bird-2.0\newg\game_map.cpp
 	"game_map.h"
 	<fstream>
 
@@ -101,7 +101,7 @@
 
 1652598934 d:\yatogami\git\flappy-bird-2.0\newg\imptimer.h
 
-1653576017 source:d:\yatogami\git\flappy-bird-2.0\newg\mainobject.cpp
+1653641688 source:d:\yatogami\git\flappy-bird-2.0\newg\mainobject.cpp
 	"MainObject.h"
 	"BaseObject.h"
 
@@ -115,4 +115,21 @@
 
 1653576855 source:d:\yatogami\git\flappy-bird-2.0\newg\textobject.cpp
 	"TextObject.h"
+
+1653578688 source:d:\yatogami\git\flappy-bird-2.0\newg\main.cpp
+	"CommonFunc.h"
+	"Baseobject.h"
+	"game_map.h"
+	"MainObject.h"
+	"ImpTimer.h"
+	"TextObject.h"
+	"ThreatsOnject.h"
+	<fstream>
+
+1653409248 d:\yatogami\git\flappy-bird-2.0\newg\threatsonject.h
+	"CommonFunc.h"
+	"BaseObject.h"
+
+1653578722 source:d:\yatogami\git\flappy-bird-2.0\newg\threatsonject.cpp
+	"ThreatsOnject.h"
 
