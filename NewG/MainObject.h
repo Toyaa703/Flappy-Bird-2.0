@@ -7,7 +7,7 @@
 #define NUM_FRAME 8
 #define MAX_FALL_SPEED 10
 #define PLAYER_SPEED 8
-#define PLAYER_JUMP_VAL 10
+#define PLAYER_JUMP_VAL 8
 #define SHOW_POS 100
 #define MAP_RESET 100
 

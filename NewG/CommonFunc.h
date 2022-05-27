@@ -25,7 +25,7 @@ const int color_key_b = 180;
 
 #define BLANK_TILE 0
 #define Tile_Size 64
-#define MAX_MAP_X 400
+#define MAX_MAP_X 440
 #define MAX_MAP_Y 10
 #define BLANK_SPACE 20
 #define HAND_SPACE 20

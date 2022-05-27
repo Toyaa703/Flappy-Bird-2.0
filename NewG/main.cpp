@@ -370,7 +370,7 @@ int main (int argc, char* argv[])
             valc = SDLCommonFunc::CheckCollision(object1, object2);
             if(valc) {
                 cur_stt = p_player.get_super();
-                if(cur_stt) p_player.Set_Score(p_player.Get_Score() + 3);
+                if(cur_stt) p_player.Set_Score(p_player.Get_Score() + 5);
                 else p_player.Set_Score(p_player.Get_Score() - 2);
                 swap(Threats[i], Threats.back());
                 Threats.pop_back();
