@@ -287,7 +287,7 @@ int main (int argc, char* argv[])
     p_player.set_clips();
 
     // Set threat object
-//    set_threats();
+    set_threats();
     ThreatsObject spi;
 
     // diamond
